@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="update" method="post" th:object="${city}">
+    <form action="update-city" method="post" th:object="${city}">
         <input type="hidden" name="id" th:field="*{id}">
         Название: <input type="text" name="name" th:field="*{name}">
         <br>

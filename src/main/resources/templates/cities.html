@@ -8,17 +8,23 @@
 </head>
 <body>
 <div class="container">
-    <a href="create">Создать новый город</a>
-    <table class="table table-striped">
+    <a>Города</a>
+    <a href="people">Люди</a>
+    <hr>
+    <a href="create-city">Создать новый город</a>
+    <table class="table table-hover">
+        <thead class="thead-dark">
         <tr>
-            <td>Id</td>
-            <td>Название</td>
-            <td>Население</td>
-            <td>Туристический ли</td>
-            <td>Дата основания</td>
-            <td>Обновить</td>
-            <td>Удаление</td>
+            <th>Id</th>
+            <th>Название</th>
+            <th>Население</th>
+            <th>Туристический ли</th>
+            <th>Дата основания</th>
+            <th>Обновить</th>
+            <th>Удаление</th>
         </tr>
+        </thead>
+        <tbody>
         <tr th:each="city: ${cities}">
             <td th:text="${city.id}"></td>
             <td th:text="${city.name}"></td>
@@ -26,12 +32,13 @@
             <td th:text="${city.touristic}"></td>
             <td th:text="${city.foundationDate}"></td>
             <td>
-                <a th:href="@{update(id=${city.id})}">обновить</a>
+                <a th:href="@{update-city(id=${city.id})}">обновить</a>
             </td>
             <td>
-                <a class="text-danger" th:href="@{delete(id=${city.id})}">удалить</a>
+                <a class="text-danger" th:href="@{delete-city(id=${city.id})}">удалить</a>
             </td>
         </tr>
+        </tbody>
     </table>
 </div>
 </body>

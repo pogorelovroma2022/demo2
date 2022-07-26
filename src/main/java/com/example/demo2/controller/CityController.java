@@ -22,31 +22,31 @@ public class CityController {
         return "cities";
     }
 
-    @GetMapping("delete")
+    @GetMapping("delete-city")
     String delete(int id) {
         cityRepository.deleteById(id);
         return "redirect:cities";
     }
 
-    @GetMapping("create")
+    @GetMapping("create-city")
     String create() {
-        return "create";
+        return "create-city";
     }
 
-    @PostMapping("create")
+    @PostMapping("create-city")
     String create(City city) {
         cityRepository.save(city);
         return "redirect:cities";
     }
 
-    @GetMapping("update")
+    @GetMapping("update-city")
     String update(Model model, int id) {
         City city = cityRepository.findById(id).get();
         model.addAttribute("city", city);
-        return "update";
+        return "update-city";
     }
 
-    @PostMapping("update")
+    @PostMapping("update-city")
     String update(City city) {
         cityRepository.save(city);
         return "redirect:cities";
